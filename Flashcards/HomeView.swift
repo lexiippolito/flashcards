@@ -20,6 +20,8 @@ struct HomeView: View {
             
             Text(Strings.subIntro)
                 .background(.yellow)
+            
+            Text("hehehe testing hi hi")
         }
     }
 }
