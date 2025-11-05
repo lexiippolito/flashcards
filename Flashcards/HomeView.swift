@@ -11,18 +11,35 @@ struct HomeView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(Strings.title)
-                .background(.pink)
-                .font(.largeTitle)
+                .font(.system(size: CGFloat(FontSizes.largeTitleInt)))
                 .fontWeight(.bold)
+                .padding()
+                .background(RoundedRectangle(cornerRadius: 24).fill(Color.babyBlue))
             
-            Text(Strings.intro)
-                .background(.blue)
-            
-            Text(Strings.subIntro)
-                .background(.yellow)
-            
-            Text("hehehe testing hi hi")
+            HStack {
+                Button(action: {
+                    print("goes to Library")
+                }) {
+                    Text(Strings.Library)
+                        .foregroundStyle(.black)
+                        .fontWeight(.semibold)
+                }
+                .padding(8)
+                .background(RoundedRectangle(cornerRadius: 16).fill(Color.hotPink))
+                
+                Button(action: {
+                    print("goes to Settings")
+                }) {
+                    Text(Strings.Settings)
+                        .foregroundStyle(.black)
+                        .fontWeight(.semibold)
+                }
+                .padding(8)
+                .background(RoundedRectangle(cornerRadius: 16).fill(Color.softOrange))
+            }
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding()
     }
 }
 
