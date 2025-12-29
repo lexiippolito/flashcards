@@ -1,13 +1,13 @@
 //
-//  FlashcardsTests.swift
+//  FlashcardModelTests.swift
 //  FlashcardsTests
 //
-//  Created by Lexi on 9/15/25.
+//  Created by Lexi on 11/9/25.
 //
 
 import XCTest
 
-final class FlashcardsTests: XCTestCase {
+final class FlashcardModelTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -27,7 +27,7 @@ final class FlashcardsTests: XCTestCase {
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        measure {
+        self.measure {
             // Put the code you want to measure the time of here.
         }
     }

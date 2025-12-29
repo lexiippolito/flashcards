@@ -8,20 +8,29 @@
 import SwiftUI
 
 struct LibraryView: View {
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
-        VStack(alignment: .leading) {
-            HStack {
-                Text(Strings.Library)
-                    .font(.system(size: CGFloat(FontSizes.largeTitleInt)))
-                            Spacer()
-                Image(systemName: "gearshape.fill")
+        NavigationStack {
+            ScrollView {
+                VStack(alignment: .leading) {
+                    Text("Hi")
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                .padding()
+                .navigationBarBackButtonHidden(true)
+                .navigationTitle(Strings.Library)
+                .navigationBarTitleDisplayMode(.large)
+                .toolbar {
+                    ToolbarItem(placement: .bottomBar) {
+                        CustomBackButton()
+                    }
+                    ToolbarItem(placement: .bottomBar) {
+                        PlusButtonView()
+                    }
+                }
             }
-            Text("settings icon next to title")
         }
-//        .background(.yellow)
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-        .padding()
-//        .background(.red)
     }
 }
 

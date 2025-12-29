@@ -1,5 +1,5 @@
 //
-//  CardView.swift
+//  FlashcardView.swift
 //  Flashcards
 //
 //  Created by Lexi on 11/4/25.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CardView: View {
+struct FlashcardView: View {
     var body: some View {
         Text("Hellooooo")
             .font(.largeTitle)
@@ -18,5 +18,5 @@ struct CardView: View {
 }
 
 #Preview {
-    CardView()
+    FlashcardView()
 }
