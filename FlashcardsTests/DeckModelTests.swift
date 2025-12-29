@@ -6,30 +6,52 @@
 //
 
 import XCTest
+@testable import Flashcards
 
 final class DeckModelTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var deck = Deck(title: "Test Deck")
+    
+    func test_init_createsDeckWithCorrectTitle() {
+        XCTAssertEqual(deck.title, "Test Deck", "Deck title was not properly set")
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func test_init_withNilCards_createsEmptyCards() {
+        XCTAssertEqual(deck.cards.count, 0, "Deck initializer with nil cards did not create an empty deck")
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func test_init_withCards_savesCardsToUserDefaults() {
+        _ = Deck(title: "User Defaults Tester", cards:
+                            [FlashcardModel(front: "This is a test card", back: "true"),
+                             FlashcardModel(front: "This is another test card", back: "false"),
+                             FlashcardModel(front: "This is the final test card", back: "true")])
+        
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_addCard_addsOneCardToDeck() {
+        deck.addCard(FlashcardModel(front: "This is a test card", back: "true"))
+        
+        XCTAssertEqual(deck.cards.count, 1)
+        XCTAssertEqual(deck.cards.first?.front, "This is a test card")
+        XCTAssertEqual(deck.cards.first?.back, "true")
     }
-
+    
+    func test_addCard_updatesDeckInUserDefaults() {
+        deck.addCard(FlashcardModel(front: "When should this card should appear in UserDefaults?", back: "After the addCard function adds it to UserDefaults"))
+        
+        let userDefaultsDeck = UserDefaults.standard.array(forKey: deck.title)
+        let lastCard = userDefaultsDeck?.last as! FlashcardModel
+        let lastCardFront = lastCard.front
+        let lastCardBack = lastCard.back
+        
+        XCTAssertEqual(lastCardFront, "When should this card should appear in UserDefaults?")
+        XCTAssertEqual(lastCardBack, "After the addCard function adds it to UserDefaults")
+    }
+    
+    func test_addCards_addsCardArrayToDeck() {
+        
+    }
+    
+    func test_addCards_updatesDeckInUserDefaults() {
+        
+    }
 }

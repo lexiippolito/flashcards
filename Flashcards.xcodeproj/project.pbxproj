@@ -29,9 +29,30 @@
 		D3CA888B2E78FB8100E424E9 /* FlashcardsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashcardsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		D34AC3572ED98DBB0091A22A /* Exceptions for "Flashcards" folder in "FlashcardsTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				UtilitiesTests.swift,
+			);
+			target = D3CA88802E78FB8100E424E9 /* FlashcardsTests */;
+		};
+		D34AC3582ED98DDB0091A22A /* Exceptions for "Flashcards" folder in "Flashcards" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				UtilitiesTests.swift,
+			);
+			target = D3CA88722E78FB8000E424E9 /* Flashcards */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		D3CA88752E78FB8000E424E9 /* Flashcards */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				D34AC3582ED98DDB0091A22A /* Exceptions for "Flashcards" folder in "Flashcards" target */,
+				D34AC3572ED98DBB0091A22A /* Exceptions for "Flashcards" folder in "FlashcardsTests" target */,
+			);
 			path = Flashcards;
 			sourceTree = "<group>";
 		};
@@ -178,6 +199,7 @@
 					};
 					D3CA88802E78FB8100E424E9 = {
 						CreatedOnToolsVersion = 16.4;
+						LastSwiftMigration = 1640;
 						TestTargetID = D3CA88722E78FB8000E424E9;
 					};
 					D3CA888A2E78FB8100E424E9 = {
@@ -467,6 +489,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = U27X8A68T2;
@@ -479,6 +502,7 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Flashcards.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Flashcards";
@@ -490,6 +514,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = U27X8A68T2;
