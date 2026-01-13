@@ -15,8 +15,5 @@ final class UtilitiesTests: XCTestCase {
                                                back: "This is the back")])
         
         let data = Utilities.encodeDeckToJSON(deck)
-        
-        print("hi i have no idea what's gonna happen but i'm dying to see lol")
-        print(data!)
     }
 }

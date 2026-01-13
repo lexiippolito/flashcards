@@ -8,13 +8,20 @@
 import SwiftUI
 
 struct LibraryView: View {
+    @StateObject private var viewModel = LibraryViewModel()
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading) {
-                    Text("Hi")
+                    Button("Concurrency") {
+                        viewModel.concurrency()
+                    }
+                    
+//                    Button("Async/await") {
+//                        viewModel
+//                    }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                 .padding()
