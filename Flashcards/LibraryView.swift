@@ -19,6 +19,10 @@ struct LibraryView: View {
                         viewModel.concurrency()
                     }
                     
+                    Button("my dictionary async/await example ahhhhh hahaha yeah yaehhh") {
+                        performGETURLRequestForDefinition(of: "purple")
+                    }
+                    
 //                    Button("Async/await") {
 //                        viewModel
 //                    }

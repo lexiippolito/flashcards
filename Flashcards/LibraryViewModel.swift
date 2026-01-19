@@ -23,6 +23,11 @@ class LibraryViewModel: ObservableObject {
         }
     }
     
+    func lexiConcurrency(word: String) {
+        performGETURLRequestForDefinition(of: word)
+       
+    }
+    
 //    func asyncAwait() {
 //        apiProvider.performPOSTURLRequestAsyncAwait { result in
 //            
