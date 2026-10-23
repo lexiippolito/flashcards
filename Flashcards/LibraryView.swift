@@ -15,35 +15,21 @@ struct LibraryView: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading) {
-                    Button("Concurrency") {
-                        viewModel.concurrency()
-                    }
                     
-                    Button("my dictionary async/await example ahhhhh hahaha yeah yaehhh") {
-                        performGETURLRequestForDefinition(of: "purple")
-                    }
                     
-//                    Button("Async/await") {
-//                        viewModel
-//                    }
+                    //                    Button("Async/await") {
+                    //                        viewModel
+                    //                    }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                 .padding()
                 .navigationBarBackButtonHidden(true)
                 .navigationTitle(Strings.Library)
-                .navigationBarTitleDisplayMode(.large)
-                .toolbar {
-                    ToolbarItem(placement: .bottomBar) {
-                        CustomBackButton()
-                    }
-                    ToolbarItem(placement: .bottomBar) {
-                        PlusButtonView()
-                    }
-                }
             }
         }
     }
 }
+
 
 #Preview {
     LibraryView()

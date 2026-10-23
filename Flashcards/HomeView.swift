@@ -12,7 +12,6 @@ struct HomeView: View {
         NavigationStack {
             VStack(alignment: .leading) {
                 Text(Strings.title)
-                    .font(.system(size: CGFloat(FontSizes.largeTitleInt)))
                     .fontWeight(.bold)
 //                    .padding()
                     .foregroundStyle(Color.babyBlue)
