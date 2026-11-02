@@ -13,39 +13,14 @@ struct HomeView: View {
             VStack(alignment: .leading) {
                 Text(Strings.title)
                     .fontWeight(.bold)
+                    .font(.largeTitle)
 //                    .padding()
-                    .foregroundStyle(Color.babyBlue)
+                    .foregroundStyle(Color.hotPink)
                 
                 Text(Strings.intro)
-                    .fontWeight(.semibold)
-                    .foregroundStyle(.white)
-//                    .frame(maxWidth: .infinity, alignment: .trailing)
                 
                 Spacer()
                 
-                HStack {
-                    NavigationLink {
-                        LibraryView()
-                    } label: {
-                        Text(Strings.Library)
-                            .foregroundStyle(.black)
-                            .font(.title)
-                            .fontWeight(.semibold)
-                    }
-                    .padding(8)
-                    .background(RoundedRectangle(cornerRadius: 16).fill(Color.hotPink))
-                    
-                    NavigationLink {
-                        SettingsView()
-                    } label: {
-                        Text(Strings.Settings)
-                            .foregroundStyle(.black)
-                            .font(.title)
-                            .fontWeight(.semibold)
-                    }
-                    .padding(8)
-                    .background(RoundedRectangle(cornerRadius: 16).fill(Color.softOrange))
-                }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding()

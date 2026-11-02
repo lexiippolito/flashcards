@@ -9,7 +9,8 @@ import Foundation
 
 struct Strings {
     static let title = "jellyflash"
-    static let intro = "for studying in a flash. :)"
+    static let intro = "for studying in a flash"
+    static let Home = "Home"
     static let Library = "Library"
     static let Settings = "Settings"
     

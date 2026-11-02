@@ -12,19 +12,20 @@ struct LibraryView: View {
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
+        Text(Strings.Library)
+            .font(.largeTitle)
+            .fontWeight(.bold)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding()
+        
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading) {
                     
-                    
-                    //                    Button("Async/await") {
-                    //                        viewModel
-                    //                    }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                 .padding()
                 .navigationBarBackButtonHidden(true)
-                .navigationTitle(Strings.Library)
             }
         }
     }
